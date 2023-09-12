@@ -1,0 +1,53 @@
+@use "./colors" as *;
+@use "./tabs" as *;
+@use "./tweets" as *;
+section.top {
+  display: flex;
+  padding-block: 1rem;
+  align-items: center;
+  flex-direction: column;
+  // background-color: red;
+  .user-picture {
+    position: absolute;
+    left: 1.5rem;
+    img {
+      max-width: 3rem;
+      border-radius: 100px;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 60rem;
+  width: 100%;
+  // background-color: green;
+  .page-title.sm {
+    display: none;
+  }
+  .tabs {
+    @include tabs;
+  }
+  section.tweets {
+    @include tweets;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .page-title.md {
+    display: inline !important;
+    padding-block-start: 1.6rem;
+    padding-inline-start: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $light-text;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  main.md {
+    border-right: 1px solid $border-color;
+  }
+}

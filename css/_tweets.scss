@@ -1,0 +1,116 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@mixin tweets {
+  display: flex !important;
+  width: 100%;
+  padding-block: 1rem 3rem;
+  gap: 2rem;
+
+  // background-color: pink;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // max-width: 60rem;
+  width: 100%;
+
+  .tweet {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid $border-color;
+    padding-block-end: 1.25rem;
+    .col:first-child {
+      padding-inline-start: 1rem;
+      img {
+        @include small-picture;
+      }
+    }
+    .col:last-child {
+      padding-inline-end: 1rem;
+
+      display: inline-flex !important;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      // background-color: green;
+      .user {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        * {
+          // white-space: nowrap;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+        }
+        .username {
+          font-weight: 700;
+          // background-color: red;
+        }
+        .handler {
+          // background-color: blue;
+
+          // max-width: 4.6rem;
+        }
+        .date {
+          // max-width: 20rem;
+          // max-width: 0.6rem;
+          // background-color: green;
+        }
+        .handler,
+        .date {
+          color: $gray-text;
+        }
+      }
+      .content {
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+
+        width: 100%;
+        span {
+          word-break: break-all;
+          font-size: 1.5rem;
+        }
+        img {
+          margin-block-start: 1rem;
+          width: 100%;
+          border-radius: 10px;
+          border: 1px solid $border-color;
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block-start: 0.5rem;
+        padding-inline: 1.2rem;
+        overflow: hidden;
+        .button {
+          @include flex-center;
+          gap: 1rem;
+          font-size: 1.3rem;
+          color: $gray-text;
+          img {
+            width: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .user {
+    flex-direction: row !important;
+    .username {
+      // max-width: 17rem;
+    }
+    .handler {
+      // max-width: 15rem;
+    }
+  }
+  .content {
+    span {
+      word-break: break-word;
+    }
+  }
+}

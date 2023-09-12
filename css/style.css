@@ -1,0 +1,433 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+  .wrapper {
+    flex-direction: row;
+    max-width: calc(600px + 6rem);
+  }
+}
+@media screen and (min-width: 1018px) {
+  .wrapper {
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 1260px;
+  }
+}
+nav.sm {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #000;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 2rem;
+}
+nav.sm span {
+  display: none;
+}
+nav.sm .logo {
+  display: none;
+}
+nav.sm .send-tweet {
+  position: absolute;
+  bottom: 7rem;
+  right: 1rem;
+  background-color: rgb(74, 153, 233);
+  width: 5rem !important;
+  height: 5rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 100%;
+}
+nav.sm .user {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  nav.md {
+    position: sticky;
+    top: 0;
+    width: 6rem;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    border-right: 1px solid rgb(48, 51, 54);
+    align-items: center;
+  }
+  nav.md .user {
+    display: block;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  nav.md .user .col:first-child img {
+    max-width: 4rem;
+    border-radius: 100px;
+  }
+  nav.md .user .col:last-child {
+    display: none;
+  }
+  nav.md .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+  }
+  nav.md .send-tweet {
+    position: static;
+  }
+  nav.md a {
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 200ms ease;
+  }
+  nav.md a:hover {
+    background-color: rgb(24, 24, 24);
+  }
+  nav.md .logo img {
+    width: 3rem;
+  }
+  section.top {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1280px) {
+  nav.md {
+    padding-inline-end: 5rem;
+    align-items: baseline;
+    width: fit-content;
+  }
+  nav.md .user {
+    display: flex;
+    justify-content: flex-start;
+    padding-inline: 2rem;
+    gap: 1rem;
+    flex-direction: row;
+    padding-block: 1rem !important;
+    border-radius: 100px;
+    transition: background-color 200ms ease;
+  }
+  nav.md .user:hover {
+    background-color: rgb(24, 24, 24);
+  }
+  nav.md .user .col:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  nav.md .user .col:last-child .username {
+    font-weight: 700;
+  }
+  nav.md .user .col:last-child .handler {
+    color: rgb(114, 118, 122);
+  }
+  nav.md span {
+    display: inline;
+  }
+  nav.md .send-tweet {
+    min-width: 20rem !important;
+    background-color: 100%;
+    height: auto;
+    padding-block: 1.7rem;
+    border-radius: 100px;
+    height: auto;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-block-start: 2rem;
+  }
+  nav.md .send-tweet img {
+    display: none;
+  }
+  nav.md a:not(.logo) {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    font-size: 2rem;
+    width: auto;
+    height: auto;
+    border-radius: 100px;
+    padding-inline-start: 2rem;
+    padding-inline-end: 3rem;
+    padding-block: 1.35rem;
+  }
+  nav.md a:not(.logo) span {
+    color: #fff;
+    text-decoration: none;
+    padding-inline-start: 2rem;
+  }
+  nav.md a.active {
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 360px) {
+  .user {
+    flex-direction: row !important;
+  }
+  .content span {
+    word-break: break-word;
+  }
+}
+section.top {
+  display: flex;
+  padding-block: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+section.top .user-picture {
+  position: absolute;
+  left: 1.5rem;
+}
+section.top .user-picture img {
+  max-width: 3rem;
+  border-radius: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 60rem;
+  width: 100%;
+}
+main .page-title.sm {
+  display: none;
+}
+main .tabs {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgb(48, 51, 54);
+  background-color: #000;
+}
+main .tabs .tab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 200ms ease;
+  cursor: pointer;
+}
+main .tabs .tab:hover {
+  background-color: rgb(24, 24, 24);
+}
+main .tabs .tab span {
+  display: block;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2rem;
+  height: 100%;
+  position: relative;
+  color: rgb(231, 233, 234);
+  font-weight: 500;
+}
+main .tabs .tab.active span {
+  border-bottom: 3px solid rgb(74, 153, 233);
+  font-weight: 700;
+}
+main section.tweets {
+  display: flex !important;
+  width: 100%;
+  padding-block: 1rem 3rem;
+  gap: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main section.tweets .tweet {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(48, 51, 54);
+  padding-block-end: 1.25rem;
+}
+main section.tweets .tweet .col:first-child {
+  padding-inline-start: 1rem;
+}
+main section.tweets .tweet .col:first-child img {
+  max-width: 4rem;
+  border-radius: 100px;
+}
+main section.tweets .tweet .col:last-child {
+  padding-inline-end: 1rem;
+  display: inline-flex !important;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+main section.tweets .tweet .col:last-child .user {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+main section.tweets .tweet .col:last-child .user .username {
+  font-weight: 700;
+}
+main section.tweets .tweet .col:last-child .user .handler,
+main section.tweets .tweet .col:last-child .user .date {
+  color: rgb(114, 118, 122);
+}
+main section.tweets .tweet .col:last-child .content {
+  width: 100%;
+}
+main section.tweets .tweet .col:last-child .content span {
+  word-break: break-all;
+  font-size: 1.5rem;
+}
+main section.tweets .tweet .col:last-child .content img {
+  margin-block-start: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(48, 51, 54);
+}
+main section.tweets .tweet .col:last-child .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 0.5rem;
+  padding-inline: 1.2rem;
+  overflow: hidden;
+}
+main section.tweets .tweet .col:last-child .buttons .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  color: rgb(114, 118, 122);
+}
+main section.tweets .tweet .col:last-child .buttons .button img {
+  width: 2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .page-title.md {
+    display: inline !important;
+    padding-block-start: 1.6rem;
+    padding-inline-start: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(231, 233, 234);
+  }
+}
+@media screen and (min-width: 667px) {
+  main.md {
+    border-right: 1px solid rgb(48, 51, 54);
+  }
+}
+aside {
+  flex: 1;
+  display: none;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  max-width: 400px;
+  flex-direction: column;
+  padding-inline-start: 2rem;
+  padding-block-start: 1rem;
+  gap: 3rem;
+}
+aside .search {
+  border: none;
+  background-color: #202327;
+  border-radius: 100px;
+  padding-inline-start: 1rem;
+  display: flex;
+}
+aside .search input {
+  flex: 1;
+  border-radius: 100px;
+  background-color: #202327;
+  border: none;
+  height: 4rem;
+  outline: none;
+  text-indent: 1rem;
+  color: rgb(231, 233, 234);
+}
+aside .to-follow {
+  display: flex;
+  flex-direction: column;
+  background-color: #202327;
+  border-radius: 20px;
+  padding-block-start: 2rem;
+  overflow: hidden;
+  gap: 1rem;
+}
+aside .to-follow .section-title {
+  font-weight: 800;
+  font-size: 2rem;
+  padding-inline-start: 1.5rem;
+}
+aside .to-follow .user {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+aside .to-follow .user:hover {
+  background-color: rgb(24, 24, 24);
+}
+aside .to-follow .user .col:first-child {
+  padding-inline-start: 1.5rem;
+}
+aside .to-follow .user .col:first-child img {
+  max-width: 4rem;
+  border-radius: 100px;
+}
+aside .to-follow .user .col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+aside .to-follow .user .col .handler {
+  color: rgb(114, 118, 122);
+}
+aside .to-follow .user .col:last-child {
+  flex: 1;
+  padding-inline-end: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+aside .to-follow .user .col:last-child button {
+  color: #0f1419;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: none;
+  background-color: #f0f3f4;
+  border-radius: 100px;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  transition: background-color 200ms ease;
+}
+aside .to-follow .user .col:last-child button:hover {
+  background-color: #d8dbdc;
+}
+
+@media screen and (min-width: 1018px) {
+  aside {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

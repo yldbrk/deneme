@@ -1,0 +1,36 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@mixin tabs {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  // background-color: red;
+  // min-height: 4rem;
+
+  background-color: #000;
+  .tab {
+    flex: 1;
+    @include flex-center;
+
+    transition: background-color 200ms ease;
+    cursor: pointer;
+    &:hover {
+      background-color: $hover-bg-color;
+    }
+    span {
+      display: block;
+      width: fit-content;
+      @include flex-center;
+      padding-block: 2rem;
+      // background-color: blue;
+      height: 100%;
+      position: relative;
+      color: $light-text;
+      font-weight: 500;
+    }
+  }
+  .tab.active span {
+    border-bottom: 3px solid $twitter-color;
+    font-weight: 700;
+  }
+}
